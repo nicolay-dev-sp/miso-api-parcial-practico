@@ -46,8 +46,8 @@ export class ClubMemberController {
     @Body() memberDto: MemberDto[],
     @Param('clubId') clubId: number,
   ) {
-    const artworks = plainToInstance(MemberEntity, memberDto);
-    return await this.clubMemberService.updateMembersFromClub(clubId, artworks);
+    const members = plainToInstance(MemberEntity, memberDto);
+    return await this.clubMemberService.updateMembersFromClub(clubId, members);
   }
 
   @Delete(':clubId/members/:memberId')

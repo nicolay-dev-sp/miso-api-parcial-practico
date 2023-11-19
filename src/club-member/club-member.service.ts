@@ -18,7 +18,7 @@ export class ClubMemberService {
     private readonly memberRepository: Repository<MemberEntity>,
   ) {}
 
-  async addMemberToClub(memberId: number, clubId: number): Promise<ClubEntity> {
+  async addMemberToClub(clubId: number, memberId: number): Promise<ClubEntity> {
     const member: MemberEntity = await this.memberRepository.findOne({
       where: { id: memberId },
     });
@@ -123,7 +123,7 @@ export class ClubMemberService {
     return await this.clubRepository.save(club);
   }
 
-  async deleteMemberFromClub(memberId: number, clubId: number) {
+  async deleteMemberFromClub(clubId: number, memberId: number) {
     const member: MemberEntity = await this.memberRepository.findOne({
       where: { id: memberId },
     });

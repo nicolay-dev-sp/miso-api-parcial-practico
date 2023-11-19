@@ -24,6 +24,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true,
+      logging: true,
     }),
   ],
   controllers: [AppController],
